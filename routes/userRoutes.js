@@ -1,20 +1,30 @@
 const express = require("express");
 const router = express.Router();
-const verifyToken = require("../middlewares/authMiddleware");
+const { verifyToken, verifyTeam } = require("../middlewares/authMiddleware");
 const authorizeRoles = require("../middlewares/roleMiddleware");
+
+
+
 // Only admin can access this route
 
-router.get("/admin", verifyToken, authorizeRoles("admin"), (req, res) => {
-  res.json("Welcome Admin!");
-});
+router.get(
+  "/admin",
+  verifyToken,
+  verifyTeam,
+  authorizeRoles("admin"),
+  (req, res) => {
+    res.json("Welcome Admin!");
+  }
+);
 
 // Admin and manager can access this route
 router.get(
-  "/manager",
+  "/team/:teamId/admin",
   verifyToken,
-  authorizeRoles("admin", "manager"),
+  verifyTeam,
+  authorizeRoles("admin"),
   (req, res) => {
-    res.json("Welcome Manager!");
+    res.json(`Welcome Admin of Team ${req.params.teamId}!`);
   }
 );
 

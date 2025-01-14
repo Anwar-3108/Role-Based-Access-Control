@@ -1,0 +1,11 @@
+2025-01-14 19:42:51 [INFO]: Superadmin registered - Username: superadmin1, Email: superadmin@example.com
+2025-01-14 20:18:27 [INFO]: Successful signin - Username: superadmin1, Email: superadmin@example.com, Role: superAdmin
+2025-01-14 20:21:55 [INFO]: Organization created - Name: AZtec, SuperAdmin: superadmin1
+2025-01-14 20:26:57 [INFO]: Successful signin - Username: superadmin1, Email: superadmin@example.com, Role: superAdmin
+2025-01-14 20:28:12 [INFO]: Successful signin - Username: superadmin1, Email: superadmin@example.com, Role: superAdmin
+2025-01-14 20:28:39 [INFO]: Organization created - Name: DIAC, SuperAdmin: superadmin1
+2025-01-14 21:52:07 [INFO]: Successful signin - Username: superadmin1, Email: superadmin@example.com, Role: superAdmin
+2025-01-14 21:52:27 [INFO]: New team created - Team Name: marCom, Organization: AZtec
+2025-01-14 21:53:52 [INFO]: New team created - Team Name: marCom, Organization: AZtec
+2025-01-14 21:59:32 [INFO]: New team created - Team Name: marCom, Organization: AZtec
+2025-01-14 22:13:20 [INFO]: New team created - Team Name: marCom, Organization: DIAC

@@ -1,30 +1,22 @@
+
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
-    username: {
-      type: "string",
-      required: true,
-    },
-    email: {
-      type: "string",
-      required: true,
-      unique: true,
-      // match: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-    },
-    password: {
-      type: "string",
-      required: true,
-    },
-    role: {
-      type: "string",
-      required: true,
-      enum: ["admin", "manager", "user"],
-    },
+    username: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
+    role: { type: String, enum: ["user", "manager", "admin", "superAdmin"], required: true},
+    teams: [
+      {
+        teamId: { type: mongoose.Schema.Types.ObjectId, ref: "Team" },
+        role: { type: String, enum: ["admin", "manager", "member"] },
+      },
+    ],
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true }
 );
 
-module.exports = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;
