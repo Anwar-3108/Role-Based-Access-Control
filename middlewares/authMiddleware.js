@@ -52,7 +52,6 @@ const verifySuperAdmin = async (req, res, next) => {
     if (!user || user.role !== "superAdmin") {
       return res.status(403).json({ message: "Access denied: SuperAdmin only" });
     }
-
     req.user = user; 
     next();
   } catch (error) {
