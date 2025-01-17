@@ -30,6 +30,7 @@ router.get(
 
 // All can access this route
 
+
 router.get(
   "/user",
   verifyToken,
