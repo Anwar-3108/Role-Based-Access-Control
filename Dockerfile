@@ -1,17 +1,13 @@
 # Use Ubuntu as the base image
-FROM ubuntu:20.04
+FROM node:20.18-alpine3.21
 
 # Set the working directory inside the container
 WORKDIR /app
 
 # Install required tools and Node.js v20.16.0
-RUN apt-get update && apt-get install -y \
+RUN apk add --no-cache \
     curl \
-    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-    && apt-get install -y nodejs \
-    && npm install -g npm@latest \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && npm install -g npm@latest
 
 # Verify Node.js and npm versions
 RUN node -v && npm -v
