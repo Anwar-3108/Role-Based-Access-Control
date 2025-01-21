@@ -1,32 +1,37 @@
-# Role-Based-Access-Control
-
-
 Role-Based-Access-Control/
 │
 ├── config/
-│   └── db.js                    # Database connection logic
+│   └── db.js                    
 │
 ├── controllers/
-│   └── authControllers.js       # Handles signup and signin logic
+│   ├── authController.js       
+│   ├── createOrganizationController.js
+│   └── teamController.js
 │
 ├── logs/
-|   ├──actions.js
-│   └── logger.js                # Logging logic and configurations
+│   ├── actions.js
+│   └── logger.js                
 │
 ├── middlewares/
-│   ├── authMiddleware.js        # Verifies JWT tokens
-│   └── roleMiddleware.js        # Handles role-based access control
+│   ├── authMiddleware.js        
+│   ├── roleMiddleware.js       
+│   └── superAdminMiddleware.js
 │
 ├── models/
-│   └── userModels.js            # User schema and model
+│   ├── userModel.js   
+│   ├── teamModel.js
+│   └── organizationModel.js      
 │
 ├── routes/
-│   ├── authRoutes.js            # Authentication-related routes
-│   └── userRoutes.js            # User and role-based routes
+│   ├── authRoutes.js            
+│   ├── userRoutes.js 
+│   ├── organizationRoutes.js   
+│   └── teamRoutes.js
 │
-├── .env                         # Environment variables
-├── .gitignore                   # Ignored files for Git
-├── package.json                 # Node.js dependencies and scripts
-├── package-lock.json            # Dependency lockfile
-├── server.js                    # Main entry point of the server
-└── README.md                    # Project documentation
+├── .env                         
+├── .gitignore                   
+├── package.json                
+├── package-lock.json   
+├── README.md         
+├── server.js                    
+└── README.md                    
