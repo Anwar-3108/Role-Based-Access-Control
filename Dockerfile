@@ -22,6 +22,7 @@ RUN npm install
 COPY . .
 
 # Expose the port your app runs on (default: 3000)
+ENV PORT=4141
 EXPOSE 4141
 
 # Specify the command to run your application
